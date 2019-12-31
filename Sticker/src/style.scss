@@ -1,0 +1,17 @@
+$backCol : green;
+$col:yellow;
+
+
+.helloCommand{
+    background-color: $backCol;
+    color: $col;
+
+}
+
+.goodByeCommand{
+    background-color: $backCol;
+    color: $col;
+}
+.test{
+    height: 500px;
+}
