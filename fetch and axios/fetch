@@ -1,0 +1,57 @@
+ componentWillMount(){
+        
+        this.fetchData();
+    }
+ // function to fetch data   
+ fetchData(){
+ //the url of data should be fetched
+     let url ='http://localhost/index.php';
+       
+       
+        fetch(url)
+        //first promise fuction that return the response in specific form can be written in .then(res =>  res.json()) format
+        .then(res => { return res.json()})
+        // using the formatted response 
+        .then((js) => {
+              
+              //store the fetched data in state 
+              //this if can be ignored
+                if(this.state.cardsData != js){
+                   
+                this.setState({
+                    cardsData  : js,
+                    fetchSucc : true
+                });
+                }
+                
+        
+        })
+        .catch((err) =>{ console.log("error in fetching data : "+err);
+        if(this.state.autocheck == true){
+            this.setState({
+                autocheck :false,
+                fetchSucc : false
+            })
+             this.autoupdate();
+        }
+        return false;
+    });
+    }
+    
+    
+    // auto  fetch if data could not be fetched 
+    autoupdate(){
+        console.log("auto start");
+       let int= setInterval(() => {
+            
+            if(this.state.fetchSucc){
+                console.log("auto stop");
+                clearInterval(int);
+                this.setState({
+                    autocheck : true,
+                    fetchSucc : true
+                })
+            }
+            this.fetchData();
+        }, 5000);
+    }
