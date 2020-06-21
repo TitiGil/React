@@ -1,0 +1,294 @@
+
+
+
+html,body{
+ width: 100%;
+ height: 100%;
+ padding: 1%;
+ margin: 0%;  
+ 
+background: rgba(147,206,222,1);
+background: -moz-linear-gradient(left, rgb(165, 235, 255) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(147,206,222,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(73,165,191,1)));
+background: -webkit-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -o-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -ms-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: linear-gradient(to right, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=1 );
+  
+}
+$card_width:180px;
+
+.card{
+    margin-right: 1%;
+    position: absolute;
+    width: $card_width;
+    height: 200px;
+    box-shadow: rgba(112, 112, 112, 0.3) 4px 2px 3px 3px;
+    border:1px solid black;
+
+    .cardBody{
+        position: relative;
+        top:0px;
+        height: 70%;
+        width: 100%;
+        box-sizing: border-box;
+        border-style: none;
+        resize: none;
+        background-color: transparent;
+       
+        padding: 5%;
+        padding-top: 0px;
+        font-size: 15px;
+        font-weight: bolder;
+        margin: 0px;
+        box-sizing: border-box;
+        outline: none;
+     
+    }
+    .cardHeader{
+        padding-top: 1%;
+        position: relative;
+        height: 13%;
+        width: 100%;
+        background-color:transparent;
+        margin:0px;
+        text-align: right;
+        direction: rtl;
+        font-size: 0.9em;
+        opacity: 0;
+        transition:opacity 0.5s ;
+        -webkit-transition:opacity 0.5s ;
+        -moz-transition:opacity 0.5s ;
+        -ms-transition:opacity 0.5s ;
+        -o-transition:opacity 0.5s ;
+        display: inline-block;
+    
+     
+    }
+
+
+    .cardProp{
+        position: relative;
+        height: 10%;
+        width: 100%;
+        background-color: transparent;
+       margin: 0%;
+        opacity: 0;
+        transition:opacity 0.5s;
+        font-size: 0.5em;
+        padding: 2%;
+        -webkit-transition:opacity 0.5s;
+        -moz-transition:opacity 0.5s;
+        -ms-transition:opacity 0.5s;
+        -o-transition:opacity 0.5s;
+
+    }
+    .themeSelector{
+        position: absolute  ;
+        height: 20%;
+        width: 100%;
+        background-color: blue;
+        margin: 0;
+        padding: 0;
+        opacity: 1;
+        bottom: 0px;
+        z-index: 100;
+        border-top: 3px solid black;   
+      
+    }
+}
+
+@mixin theme($cardColor,$cardHColor,$cardFColor) {
+    
+
+
+
+    background-color: $cardColor;
+    .cardBody{
+  
+        color: $cardFColor;
+    }
+    .cardHeader{
+ 
+        color:$cardHColor;
+       
+        
+      
+    }
+    .cardProp{
+   
+        color: $cardHColor;
+   
+
+    }
+}
+
+
+$pallet : (
+(#CC0000,#ffffff,#F4EFA4),
+(#07149C,#ffffff,#AEE882),
+(#008000,#ffffff,#CFF8FC),
+(#A3A300,#ffffff,#FCE8E8),
+(#000000,#ffffff,#FFFFFF),
+(#FFFFFF,#000000,#000000));
+
+
+$count :1;
+@each $var in $pallet {
+    
+    .card.theme-#{$count}{
+        
+     @include theme(nth($var,1), nth($var,2), nth($var,3));
+     @if($count==5){
+         border: 1px solid white;
+     }
+    }
+    $count:$count+1;
+}
+.rel{
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    width: 30px;
+    height: 100%;
+}
+$count :1;
+@each $var in $pallet{
+    .rel.kind-#{$count}{
+     
+        background-color: nth($var,1);
+
+    }
+    $count:$count+1;
+}
+a{
+    box-sizing: content-box;
+    background-color: transparent;
+    text-decoration: none;
+    border: none;
+    
+  }
+
+.card:hover .cardHeader {
+    opacity: 1;
+}
+.card:hover .cardProp {
+    opacity: 1;
+}
+
+.cardProp *{
+    margin-left: 1%;
+}
+
+.sortbutton{
+
+    height: 40px;
+    width: 40px;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: bolder;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    border-radius: 10px;;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+.addbutton{
+    left : 50px;
+    font-weight: bolder;
+    
+}
+.fsort{
+    left : 90px;
+}
+.trash{
+    left : 130px;
+}
+.controlPanel{
+    background: none;
+    height: 40px;
+    width: 160px;
+    position: fixed;
+}
+.MuiPaper-root{
+    
+    background-color: rgb(79, 172, 196) !important;
+    padding: 20px;
+}
+.delforever{
+    color: #eb2012 !important;
+    &:hover{
+        cursor: pointer;
+    }
+}
+.restorefromtrash{
+    color: #03d133 !important;
+    &:hover{
+        cursor: pointer;
+    }
+}
+.delforever , .restorefromtrash{
+    transform: translateY(6px);
+    -webkit-transform: translateY(6px);
+    -moz-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    -o-transform: translateY(6px);
+   
+}
+.delItem{
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap ;
+    background-color: #1b1f1b !important;
+    border-radius: 5px;
+    height: 40px;
+    align-content: center;
+    vertical-align: middle;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    margin-bottom: 10px !important;
+    transition:  1s cubic-bezier(0.075, 0.82, 0.165, 1)   ;
+    -webkit-transition:  1s cubic-bezier(0.075, 0.82, 0.165, 1)   ;
+    -moz-transition:  1s cubic-bezier(0.075, 0.82, 0.165, 1)   ;
+    -ms-transition:  1s cubic-bezier(0.075, 0.82, 0.165, 1)   ;
+    -o-transition:  1s cubic-bezier(0.075, 0.82, 0.165, 1)   ;
+    p
+{
+        word-wrap: break-word;
+        width: 200px;
+        height: 15px;;
+        color: white;
+   
+        padding: 0%;
+        padding-left: 5px;
+        overflow: hidden;
+white-space: nowrap;
+        text-overflow: ellipsis;
+        transform: translateY(-5px)    ;
+        -webkit-transform: translateY(-5px)    ;
+        -moz-transform: translateY(-5px)    ;
+        -ms-transform: translateY(-5px)    ;
+        -o-transform: translateY(-5px)    ;
+
+}
+}
+// #rft , #dfe
+// {
+//     background: #AEE882 !important;
+//     color: #07149C;
+//     ::after , ::before{
+//       border-color: transparent #AEE882  transparent transparent!important;
+//       color: red;
+//       background-color: #008000;
+//     }
+// }

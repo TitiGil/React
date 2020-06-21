@@ -1,0 +1,321 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 1%;
+  margin: 0%;
+  background: #93cede;
+  background: -moz-linear-gradient(left, #a5ebff 0%, #75bdd1 41%, #49a5bf 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #93cede), color-stop(41%, #75bdd1), color-stop(100%, #49a5bf));
+  background: -webkit-linear-gradient(left, #93cede 0%, #75bdd1 41%, #49a5bf 100%);
+  background: -o-linear-gradient(left, #93cede 0%, #75bdd1 41%, #49a5bf 100%);
+  background: -ms-linear-gradient(left, #93cede 0%, #75bdd1 41%, #49a5bf 100%);
+  background: linear-gradient(to right, #93cede 0%, #75bdd1 41%, #49a5bf 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#93cede", endColorstr="#49a5bf", GradientType=1 );
+}
+
+.card {
+  margin-right: 1%;
+  position: absolute;
+  width: 180px;
+  height: 200px;
+  box-shadow: rgba(112, 112, 112, 0.3) 4px 2px 3px 3px;
+  border: 1px solid black;
+}
+.card .cardBody {
+  position: relative;
+  top: 0px;
+  height: 70%;
+  width: 100%;
+  box-sizing: border-box;
+  border-style: none;
+  resize: none;
+  background-color: transparent;
+  padding: 5%;
+  padding-top: 0px;
+  font-size: 15px;
+  font-weight: bolder;
+  margin: 0px;
+  box-sizing: border-box;
+  outline: none;
+}
+.card .cardHeader {
+  padding-top: 1%;
+  position: relative;
+  height: 13%;
+  width: 100%;
+  background-color: transparent;
+  margin: 0px;
+  text-align: right;
+  direction: rtl;
+  font-size: 0.9em;
+  opacity: 0;
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  display: inline-block;
+}
+.card .cardProp {
+  position: relative;
+  height: 10%;
+  width: 100%;
+  background-color: transparent;
+  margin: 0%;
+  opacity: 0;
+  transition: opacity 0.5s;
+  font-size: 0.5em;
+  padding: 2%;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+}
+.card .themeSelector {
+  position: absolute;
+  height: 20%;
+  width: 100%;
+  background-color: blue;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  bottom: 0px;
+  z-index: 100;
+  border-top: 3px solid black;
+}
+
+.card.theme-1 {
+  background-color: #CC0000;
+}
+.card.theme-1 .cardBody {
+  color: #F4EFA4;
+}
+.card.theme-1 .cardHeader {
+  color: #ffffff;
+}
+.card.theme-1 .cardProp {
+  color: #ffffff;
+}
+
+.card.theme-2 {
+  background-color: #07149C;
+}
+.card.theme-2 .cardBody {
+  color: #AEE882;
+}
+.card.theme-2 .cardHeader {
+  color: #ffffff;
+}
+.card.theme-2 .cardProp {
+  color: #ffffff;
+}
+
+.card.theme-3 {
+  background-color: #008000;
+}
+.card.theme-3 .cardBody {
+  color: #CFF8FC;
+}
+.card.theme-3 .cardHeader {
+  color: #ffffff;
+}
+.card.theme-3 .cardProp {
+  color: #ffffff;
+}
+
+.card.theme-4 {
+  background-color: #A3A300;
+}
+.card.theme-4 .cardBody {
+  color: #FCE8E8;
+}
+.card.theme-4 .cardHeader {
+  color: #ffffff;
+}
+.card.theme-4 .cardProp {
+  color: #ffffff;
+}
+
+.card.theme-5 {
+  background-color: #000000;
+  border: 1px solid white;
+}
+.card.theme-5 .cardBody {
+  color: #FFFFFF;
+}
+.card.theme-5 .cardHeader {
+  color: #ffffff;
+}
+.card.theme-5 .cardProp {
+  color: #ffffff;
+}
+
+.card.theme-6 {
+  background-color: #FFFFFF;
+}
+.card.theme-6 .cardBody {
+  color: #000000;
+}
+.card.theme-6 .cardHeader {
+  color: #000000;
+}
+.card.theme-6 .cardProp {
+  color: #000000;
+}
+
+.rel {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  width: 30px;
+  height: 100%;
+}
+
+.rel.kind-1 {
+  background-color: #CC0000;
+}
+
+.rel.kind-2 {
+  background-color: #07149C;
+}
+
+.rel.kind-3 {
+  background-color: #008000;
+}
+
+.rel.kind-4 {
+  background-color: #A3A300;
+}
+
+.rel.kind-5 {
+  background-color: #000000;
+}
+
+.rel.kind-6 {
+  background-color: #FFFFFF;
+}
+
+a {
+  box-sizing: content-box;
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+}
+
+.card:hover .cardHeader {
+  opacity: 1;
+}
+
+.card:hover .cardProp {
+  opacity: 1;
+}
+
+.cardProp * {
+  margin-left: 1%;
+}
+
+.sortbutton {
+  height: 40px;
+  width: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: bolder;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.sortbutton:hover {
+  cursor: pointer;
+}
+
+.addbutton {
+  left: 50px;
+  font-weight: bolder;
+}
+
+.fsort {
+  left: 90px;
+}
+
+.trash {
+  left: 130px;
+}
+
+.controlPanel {
+  background: none;
+  height: 40px;
+  width: 160px;
+  position: fixed;
+}
+
+.MuiPaper-root {
+  background-color: #4facc4 !important;
+  padding: 20px;
+}
+
+.delforever {
+  color: #eb2012 !important;
+}
+.delforever:hover {
+  cursor: pointer;
+}
+
+.restorefromtrash {
+  color: #03d133 !important;
+}
+.restorefromtrash:hover {
+  cursor: pointer;
+}
+
+.delforever, .restorefromtrash {
+  transform: translateY(6px);
+  -webkit-transform: translateY(6px);
+  -moz-transform: translateY(6px);
+  -ms-transform: translateY(6px);
+  -o-transform: translateY(6px);
+}
+
+.delItem {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap;
+  background-color: #1b1f1b !important;
+  border-radius: 5px;
+  height: 40px;
+  align-content: center;
+  vertical-align: middle;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-bottom: 10px !important;
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -moz-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -ms-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -o-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.delItem p {
+  word-wrap: break-word;
+  width: 200px;
+  height: 15px;
+  color: white;
+  padding: 0%;
+  padding-left: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  -o-transform: translateY(-5px);
+}
+
+/*# sourceMappingURL=card.css.map */
